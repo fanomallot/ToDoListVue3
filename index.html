@@ -34,7 +34,8 @@
 
                 <button
                   class="clear"
-                  @click="clearAll"
+                  @click="toDoList = []"
+                  v-if="toDoList.length"
                 >
                   Clear All
                 </button>
