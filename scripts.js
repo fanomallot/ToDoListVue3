@@ -5,10 +5,17 @@ const handlingToDo = {
       toDo: null
     }
   },
+  computed: {
+    toDoNotExist() {
+      return !this.toDo
+    }
+  },
   methods: {
     save() {
-      this.toDoList.push({title: this.toDo, done: false})
-      this.toDo = null
+      if (!this.toDoNotExist) {
+        this.toDoList.push({title: this.toDo, done: false})
+        this.toDo = null
+      }
     },
     done(index) {
       this.toDoList[index].done = !this.toDoList[index].done
