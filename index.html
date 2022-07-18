@@ -25,7 +25,7 @@
                       class="single-todo"
                       v-for="(toDo, index) in toDoList"
                       :key="index"
-                      :class="toDo.done ? 'done' : ''"
+                      :class="{ done : toDo.done }"
                     >
                       <p @click="done(index)">{{ toDo.title }}</p>
                     </div>
